@@ -25,22 +25,19 @@
 const searchInsert = function (nums, target) {
   let start = 0
   let end = nums.length
-  console.log('iteration', { start, end })
   while (start <= end) {
     let mid = Math.ceil((start + end) / 2)
     if (nums[mid] === target) {
       return mid
     } else if (nums[mid] < target) {
       start = mid + 1
-      console.log('iteration <', { start, end })
     } else {
       end = mid - 1
-      console.log('iteration >', { start, end })
     }
   }
   return end + 1
 }
 
-const arr = [-5, 3, 5, 6]
-const result = searchInsert(arr, -4)
+const arr = [1, 3, 5, 6]
+const result = searchInsert(arr, -2)
 console.log(result)
